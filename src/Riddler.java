@@ -109,17 +109,15 @@ public class Riddler {
 
     public String decryptFour(String encrypted) {
         String decrypted = "";
-        int value = 0;
+        int value;
         for(int i = 0; i < encrypted.length(); i++)
         {
-            //Turn Symbol into Hex
+            //Turn Symbol into Decimal
             value = encrypted.charAt(i);
             String hex = Integer.toHexString(value);
             // Decimal Value of 2700
             value = value - 9984;
             value = value + 65;
-            //Turn Hex into Base 10
-
             decrypted += (char) value;
 
         }
