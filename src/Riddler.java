@@ -93,7 +93,8 @@ public class Riddler {
                         placehold = 1;
                     }
                     //Turn Binary into Base 10
-                    value += (placehold * (int) Math.pow(2,j));
+                    //value += (placehold * (int) Math.pow(2,j));
+                    value += placehold << j;
 
                 }
                 //Turn ASCII into Characters
@@ -114,14 +115,16 @@ public class Riddler {
             //Turn Symbol into Hex
             value = encrypted.charAt(i);
             String hex = Integer.toHexString(value);
+            // Decimal Value of 2700
+            value = value - 9984;
+            value = value + 65;
             //Turn Hex into Base 10
-            for(int j = 0; j < hex.length(); j++){
-                int num = Integer.valueOf(hex.charAt(hex.length()-j-1));
-            }
-            System.out.println(hex);
+
+            decrypted += (char) value;
+
         }
         // TODO: Complete the decryptFour() function.
-        System.out.println();
+        System.out.println(decrypted);
         return decrypted;
     }
 }
